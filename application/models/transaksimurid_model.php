@@ -18,11 +18,13 @@
 			foreach ($usernametutor as $row) {
 				$tutor=$row->username_tutor;
 				$idpencariantutor = $row->id_pencariantutor;
+				$qrcode = $row->qr_codes;
 			}
 
 			$datatutor = "SELECT * FROM `user` WHERE `username_user`= '$tutor'";
 			$query = "SELECT * FROM `pencarian_tutor` WHERE `id_pencarian` = '$idpencariantutor'";
 			$hasil = array();
+			$hasil['data_transaksi'] = $qrcode;
 			$hasil['transaksi'] = $this->db->query($query)->result();
 			$hasil['data_tutor'] = $this->db->query($datatutor)->result();
 			return $hasil;
