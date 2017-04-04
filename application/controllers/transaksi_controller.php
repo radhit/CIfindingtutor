@@ -20,7 +20,7 @@
 			      	$_POST['username_murid'],
 			      	$_POST['durasi'],
 			      	$_POST['qr_codes']);
-	        	$this->transaksi_model->updateStatusPermintaan($_POST['id_pencarian']);
+	        	$this->transaksi_model->updateStatusPermintaan($_POST['id_pencarian'], $_POST['biaya_final']);
 
 		        if($result)
 		        {

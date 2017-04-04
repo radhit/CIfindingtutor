@@ -19,9 +19,9 @@
 					return false;
 				}		
 		}
-		public function updateStatusPermintaan($id_pencarian)
+		public function updateStatusPermintaan($id_pencarian, $biaya)
 		{
-			$query = "UPDATE `pencarian_tutor` SET `status_pencarian` = 1 WHERE `id_pencarian` = '$id_pencarian'";
+			$query = "UPDATE `pencarian_tutor` SET `status_pencarian` = 1  AND `biayatutor_pencarian`='$biaya' WHERE `id_pencarian` = '$id_pencarian'";
 			 if ($this->db->query($query))
 			 {
 			 	return true;
