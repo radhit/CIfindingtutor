@@ -7,7 +7,7 @@
 		}
 		public function cekData($username)
 		{
-			$query = "SELECT * FROM `transaksi` WHERE `username_murid` = '$username'";
+			$query = "SELECT * FROM `transaksi` WHERE `username_murid` = '$username' AND `status_transaksi` = 0";
 			$hasil = $this->db->query($query);
 			return $hasil->num_rows();
 		}
