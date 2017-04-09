@@ -17,7 +17,7 @@
 			}
 			else{
 				$respon['error'] = false;
-				$respon['message'] = "Anda pengguna baru";
+				$respon['message'] = "Tidak ada history kriteria";
 			}
 			echo json_encode($respon);
 		}
