@@ -10,16 +10,15 @@
 		{
 			$this->load->database();
 
-			$username = $_POST['username'];
-			$cektransaksi = $this->transaksimurid_model->cekData($username);
-			if ($cektransaksi>0) {
-				$data = $this->transaksimurid_model->getData($username);
-				$result = $data;
-				$result['message'] = "Ada transaksi";
-			}
-			elseif ($cektransaksi<1) {
-				$result['message'] = "Tidak ada transaksi sedang berjalan";
-			}
+			$id = $_POST['id'];
+			$data = $this->transaksimurid_model->getData($id);
+			$result = $data;
+			// $cektransaksi = $this->transaksimurid_model->cekData($id);
+			// if ($cektransaksi>0) {
+			// }
+			// elseif ($cektransaksi<1) {
+			// 	$result['message'] = "Tidak ada transaksi sedang berjalan";
+			// }
 			echo json_encode($result);
 			
 		}

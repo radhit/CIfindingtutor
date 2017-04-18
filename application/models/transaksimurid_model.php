@@ -5,15 +5,10 @@
 		{
 			parent::__construct();
 		}
-		public function cekData($username)
+
+		public function getData($id)
 		{
-			$query = "SELECT * FROM `transaksi` WHERE `username_murid` = '$username' AND `status_transaksi` = 0";
-			$hasil = $this->db->query($query);
-			return $hasil->num_rows();
-		}
-		public function getData($username)
-		{
-			$getusernametutor = "SELECT * FROM `transaksi` WHERE `username_murid` = '$username'";
+			$getusernametutor = "SELECT * FROM `transaksi` WHERE `id_transaksi` = '$id'";
 			$usernametutor = $this->db->query($getusernametutor)->result();
 			foreach ($usernametutor as $row) {
 				$tutor=$row->username_tutor;

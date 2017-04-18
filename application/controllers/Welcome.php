@@ -20,6 +20,49 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->model('mchart');
+		$data['bulan'] = $this->mchart->chartBulan();
+   		$data['tahun'] = $this->mchart->chartTahun();
+   		$this->load->view('welcome_message', $data);
+	}
+	public function data_tutor()
+	{
+        $bulan = $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
+		$this->load->model('mtutor');
+        $data['query'] = $this->mtutor->selectAll($bulan, $tahun);
+		$this->load->view('data_tutor', $data);
+	}
+	public function data_murid()
+	{
+		$bulan = $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
+		$this->load->model('mmurid');
+        $data['query'] = $this->mmurid->selectAll($bulan, $tahun);
+		$this->load->view('data_murid', $data);
+	}
+	public function tutor_terbaik()
+	{
+		$bulan = $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
+		$this->load->model('mbesttutor');
+        $data['query'] = $this->mbesttutor->selectAll($bulan, $tahun);
+		$this->load->view('tutor_terbaik', $data);
+	}
+	public function murid_terbaik()
+	{
+		$bulan = $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
+		$this->load->model('mbestmurid');
+        $data['query'] = $this->mbestmurid->selectAll($bulan, $tahun);
+		$this->load->view('murid_terbaik', $data);
+	}
+	public function transaksi()
+	{
+		$bulan = $this->input->get('bulan');
+		$tahun = $this->input->get('tahun');
+		$this->load->model('mtransaksi');
+        $data['query'] = $this->mtransaksi->selectAll($bulan, $tahun);
+		$this->load->view('transaksi', $data);
 	}
 }
