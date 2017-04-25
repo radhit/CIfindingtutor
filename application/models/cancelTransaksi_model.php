@@ -1,5 +1,5 @@
 <?php
-	class cancelTransaksi_model extends CI_Model
+	class CancelTransaksi_model extends CI_Model
 	{
 		function __construct()
 		{

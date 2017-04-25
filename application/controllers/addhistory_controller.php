@@ -1,17 +1,17 @@
 <?php
-	class addhistory_controller extends CI_Controller
+	class Addhistory_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('addhistory_model');
+			$this->load->model('Addhistory_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			if(isset($_POST['qr_codes']))
 			{
-				$user = $this->addhistory_model->getUsernameTutor($_POST['qr_codes']);
+				$user = $this->Addhistory_model->getUsernameTutor($_POST['qr_codes']);
 		        if($user)
 		        {
 		        	foreach ($user as $row )

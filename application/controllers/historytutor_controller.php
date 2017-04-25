@@ -1,16 +1,16 @@
 <?php
-	class historytutor_controller extends CI_Controller
+	class Historytutor_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('historytutor_model');
+			$this->load->model('Historytutor_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			$username = $_POST['username'];
-			$history = $this->historytutor_model->getHistory($username);
+			$history = $this->Historytutor_model->getHistory($username);
 			// $result = $history;
 			$result = array();
 			$penghubung="--";

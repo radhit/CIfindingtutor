@@ -1,5 +1,5 @@
 <?php
-	class pencariantutor_model extends CI_Model
+	class Pencariantutor_model extends CI_Model
 	{
 		function __construct()
 		{

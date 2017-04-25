@@ -1,5 +1,5 @@
 <?php
-	class deletekriteria_model extends CI_Model
+	class Deletekriteria_model extends CI_Model
 	{
 		function __construct()
 		{

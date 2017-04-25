@@ -1,10 +1,10 @@
 <?php
-	class timeServer_controller extends CI_Controller
+	class TimeServer_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('timeServer_model');
+			$this->load->model('TimeServer_model');
 		}
 		public function index()
 		{
@@ -15,7 +15,7 @@
 			{
 				if(isset($_POST['qr_codes']) ) 
 				{
-					$user = $this->timeServer_model->getDurasiByTransaksi($_POST['qr_codes']);
+					$user = $this->TimeServer_model->getDurasiByTransaksi($_POST['qr_codes']);
 					foreach ($user as $row ) {
 						$current_date['status'] = $row->status_transaksi;
 					}

@@ -1,5 +1,5 @@
 <?php
-	class transaksimurid_model extends CI_Model
+	class Transaksimurid_model extends CI_Model
 	{
 		function __construct()
 		{

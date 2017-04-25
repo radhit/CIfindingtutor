@@ -1,17 +1,17 @@
 <?php
-	class tambahkeahlian_controller extends CI_Controller
+	class Tambahkeahlian_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('tambahkeahlian_model');
+			$this->load->model('Tambahkeahlian_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			if(isset($_POST['username']) and isset($_POST['kelas']) and isset($_POST['pelajaran']))
 			{
-				$this->tambahkeahlian_model->tambahKeahlian(
+				$this->Tambahkeahlian_model->tambahKeahlian(
 					$_POST['username'],
 					$_POST['kelas'],
 					$_POST['pelajaran']);

@@ -1,5 +1,5 @@
 <?php
-	class getkeahlian_model extends CI_Model
+	class Getkeahlian_model extends CI_Model
 	{
 		function __construct()
 		{

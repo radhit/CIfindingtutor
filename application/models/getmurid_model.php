@@ -1,5 +1,5 @@
 <?php
-	class getmurid_model extends CI_Model
+	class Getmurid_model extends CI_Model
 	{
 		function __construct()
 		{

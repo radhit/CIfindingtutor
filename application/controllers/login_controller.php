@@ -1,10 +1,10 @@
 <?php
-	class login_controller extends CI_Controller
+	class Login_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('login_model');
+			$this->load->model('Login_model');
 		}
 		public function index()
 		{
@@ -13,9 +13,9 @@
 			if($this->input->post("username")!=NULL && $this->input->post("password")!=NULL)
 			{
 				
-				if($this->login_model->userLogin($this->input->post("username"), $this->input->post("password"))>0)
+				if($this->Login_model->userLogin($this->input->post("username"), $this->input->post("password"))>0)
 				{
-					$user = $this->login_model->getUser($_POST['username']);
+					$user = $this->Login_model->getUser($_POST['username']);
 					foreach ($user as $row) {
 						$respon['id'] = $row->id_user;
 						$respon['name'] = $row->nama_user;

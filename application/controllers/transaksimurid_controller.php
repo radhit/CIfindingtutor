@@ -1,5 +1,5 @@
 <?php
-	class transaksimurid_controller extends CI_Controller
+	class Transaksimurid_controller extends CI_Controller
 	{
 		function __construct()
 		{
@@ -11,7 +11,7 @@
 			$this->load->database();
 
 			$id = $_POST['id'];
-			$data = $this->transaksimurid_model->getData($id);
+			$data = $this->Transaksimurid_model->getData($id);
 			$result = $data;
 			// $cektransaksi = $this->transaksimurid_model->cekData($id);
 			// if ($cektransaksi>0) {

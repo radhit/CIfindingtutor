@@ -1,20 +1,20 @@
 <?php
-	class register_controller extends CI_Controller
+	class Register_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('register_model');
+			$this->load->model('Register_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			if(isset($_POST['nama']) and isset($_POST['alamat']) and isset($_POST['jeniskelamin']) and isset($_POST['usia']) and isset($_POST['telp']) and isset($_POST['email']) and isset($_POST['jenis']) and isset($_POST['username']) and isset($_POST['password']))
 			{
-				$cekuser = $this->register_model->cekUser($_POST['username'],$_POST['email']);
+				$cekuser = $this->Register_model->cekUser($_POST['username'],$_POST['email']);
 				if($cekuser < 1)
 				{
-					$cek = $this->register_model->createUser(
+					$cek = $this->Register_model->createUser(
 							$_POST['nama'],
 							$_POST['alamat'],
 							$_POST['jeniskelamin'],

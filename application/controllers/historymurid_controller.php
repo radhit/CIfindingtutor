@@ -1,16 +1,16 @@
 <?php
-	class historymurid_controller extends CI_Controller
+	class Historymurid_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('historymurid_model');
+			$this->load->model('Historymurid_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			$username = $_POST['username'];
-			$history = $this->historymurid_model->getHistory($username);
+			$history = $this->Historymurid_model->getHistory($username);
 			// $result = $history;
 			$result = array();
 			$penghubung="--";

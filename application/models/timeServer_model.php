@@ -1,5 +1,5 @@
 <?php
-	class timeServer_model extends CI_Model
+	class TimeServer_model extends CI_Model
 	{
 		function __construct()
 		{

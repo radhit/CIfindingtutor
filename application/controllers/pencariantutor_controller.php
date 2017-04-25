@@ -4,7 +4,7 @@
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('pencariantutor_model');
+			$this->load->model('Pencariantutor_model');
 		}
 		public function index()
 		{
@@ -13,7 +13,7 @@
 			if(isset($_POST['username']) and isset($_POST['name']) and isset($_POST['kelas']) and isset($_POST['pelajaran']) and isset($_POST['alamat']) 
 				and isset($_POST['tanggal']) and isset($_POST['hari']) and isset($_POST['jam']) and isset($_POST['durasi']) and isset($_POST['jeniskelamin']))
 			{
-				$this->pencariantutor_model->pencarianTutor(
+				$this->Pencariantutor_model->pencarianTutor(
 					$_POST['username'],
 					$_POST['name'],
 					$_POST['kelas'],
@@ -27,7 +27,7 @@
 					$_POST['usia'],
 					$_POST['biaya']);
 
-				$this->pencariantutor_model->historyPencarian(
+				$this->Pencariantutor_model->historyPencarian(
 					$_POST['username'],
 					$_POST['hari'],
 					$_POST['jam'],

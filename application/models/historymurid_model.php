@@ -1,5 +1,5 @@
 <?php
-	class historymurid_model extends CI_Model
+	class Historymurid_model extends CI_Model
 	{
 		function __construct()
 		{

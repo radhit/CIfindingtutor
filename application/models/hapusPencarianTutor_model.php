@@ -1,5 +1,5 @@
 <?php
-	class hapusPencarianTutor_model extends CI_Model
+	class HapusPencarianTutor_model extends CI_Model
 	{
 		function __construct()
 		{

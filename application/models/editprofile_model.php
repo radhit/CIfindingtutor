@@ -1,5 +1,5 @@
 <?php
-	class editprofile_model extends CI_Model
+	class Editprofile_model extends CI_Model
 	{
 		function __construct()
 		{
@@ -33,7 +33,7 @@
 		}
 		public function deleteHari($username)
 		{
-			$query = "DELETE FROM `ketersediaan_hari` WHERE 1";
+			$query = "DELETE FROM `ketersediaan_hari` WHERE username_tutor='$username'";
 			if($this->db->query($query))
 				{
 					return true;

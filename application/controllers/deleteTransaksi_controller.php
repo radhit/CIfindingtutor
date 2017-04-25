@@ -1,10 +1,10 @@
 <?php
-	class deleteTransaksi_controller extends CI_Controller
+	class DeleteTransaksi_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('deleteTransaksi_model');
+			$this->load->model('DeleteTransaksi_model');
 		}
 		public function index()
 		{
@@ -15,7 +15,7 @@
 				if(isset($_POST['qr_codes'])) 
 				{
 		
-					$user = $this->deleteTransaksi_model->deleteByTransaksi($_POST['qr_codes']);
+					$user = $this->DeleteTransaksi_model->deleteByTransaksi($_POST['qr_codes']);
 					$response['error'] = false;
 					$response['message'] = "Data has been deleted";
 				}

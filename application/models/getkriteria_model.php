@@ -1,5 +1,5 @@
 <?php
-	class getkriteria_model extends CI_Model
+	class Getkriteria_model extends CI_Model
 	{
 		function __construct()
 		{

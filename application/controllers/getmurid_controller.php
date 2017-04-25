@@ -1,21 +1,21 @@
 <?php
-	class getmurid_controller extends CI_Controller
+	class Getmurid_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('getmurid_model');
+			$this->load->model('Getmurid_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			$kriteria = $_POST['kriteria'];
 			if ($kriteria=="jarak") {
-				$murid = $this->getmurid_model->getMuridByJarak();
+				$murid = $this->Getmurid_model->getMuridByJarak();
 			}
 
 			elseif ($kriteria=="hari") {
-				$hari = $this->getmurid_model->getHari($_POST['username']);
+				$hari = $this->Getmurid_model->getHari($_POST['username']);
 				$arrayhari = array();
 				foreach ($hari as $row) {
 					array_push($arrayhari, $row->hari_tutor);
@@ -25,15 +25,15 @@
 				$hari = $petik.$hasil.$petik;
 				// echo $hari;
 				// exit();
-				$murid = $this->getmurid_model->getMuridByHari($hari);
+				$murid = $this->Getmurid_model->getMuridByHari($hari);
 			}
 
 			elseif ($kriteria=="jenis kelamin") {
-				$murid = $this->getmurid_model->getMuridByJK($_POST['username']);
+				$murid = $this->Getmurid_model->getMuridByJK($_POST['username']);
 			}
 
 			elseif ($kriteria=="pelajaran") {
-				$pelajaran = $this->getmurid_model->getPelajaran($_POST['username']);
+				$pelajaran = $this->Getmurid_model->getPelajaran($_POST['username']);
 				$arraypelajaran = array();
 				foreach ($pelajaran as $row) {
 					array_push($arraypelajaran, $row->pelajaran_keahlian);
@@ -41,11 +41,11 @@
 				$hasil = implode("','", $arraypelajaran);
 				$petik = "'";
 				$keahlian = $petik.$hasil.$petik;
-				$murid = $this->getmurid_model->getMuridByKeahlian($keahlian);
+				$murid = $this->Getmurid_model->getMuridByKeahlian($keahlian);
 			}
 
 			elseif ($kriteria=="kelas") {
-				$kelas = $this->getmurid_model->getKelas($_POST['username']);
+				$kelas = $this->Getmurid_model->getKelas($_POST['username']);
 				$arraykelas = array();
 				foreach ($kelas as $row) {
 					array_push($arraykelas, $row->kelas_keahlian);
@@ -53,15 +53,15 @@
 				$hasil = implode("','", $arraykelas);
 				$petik = "'";
 				$kelas = $petik.$hasil.$petik;
-				$murid = $this->getmurid_model->getMuridByKelas($kelas);
+				$murid = $this->Getmurid_model->getMuridByKelas($kelas);
 			}
 
 			elseif ($kriteria=="usia") {
-				$murid = $this->getmurid_model->getMuridByUsia($_POST['username']);
+				$murid = $this->Getmurid_model->getMuridByUsia($_POST['username']);
 			}
 
 			elseif ($kriteria=="all") {
-				$murid = $this->getmurid_model->getMurid();
+				$murid = $this->Getmurid_model->getMurid();
 			}									
 
 			$result = array();

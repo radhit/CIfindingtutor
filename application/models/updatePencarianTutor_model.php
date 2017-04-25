@@ -1,5 +1,5 @@
 <?php
-	class updatePencarianTutor_model extends CI_Model
+	class UpdatePencarianTutor_model extends CI_Model
 	{
 		function __construct()
 		{

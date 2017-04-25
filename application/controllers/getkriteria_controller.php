@@ -1,17 +1,17 @@
 <?php
-	class getkriteria_controller extends CI_Controller
+	class Getkriteria_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('getkriteria_model');
+			$this->load->model('Getkriteria_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			$username = $_POST['username'];
 			//$jumlahKriteria = $this->getkriteria_model->jumlahKriteria($username);
-			$kriteria = $this->getkriteria_model->getKriteria($username);
+			$kriteria = $this->Getkriteria_model->getKriteria($username);
 			$result = array();
 			foreach ($kriteria as $row ) {
 				array_push($result,array(

@@ -1,16 +1,16 @@
 <?php
-	class getkeahlian_controller extends CI_Controller
+	class Getkeahlian_controller extends CI_Controller
 	{
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('getkeahlian_model');
+			$this->load->model('Getkeahlian_model');
 		}
 		public function index()
 		{
 			$this->load->database();
 			$username = $_POST['username'];
-			$keahlian = $this->getkeahlian_model->getKeahlian($username);
+			$keahlian = $this->Getkeahlian_model->getKeahlian($username);
 			$result = array();
 			foreach ($keahlian as $row ) {
 				array_push($result,array(
