@@ -15,7 +15,7 @@
 			}
 
 			elseif ($kriteria=="hari") {
-				$hari = $this->Getmurid_model->getHari($_POST['username']);
+				$hari = $this->Getmurid_model->getHari($_POST['id_user']);
 				$arrayhari = array();
 				foreach ($hari as $row) {
 					array_push($arrayhari, $row->hari_tutor);
@@ -29,11 +29,11 @@
 			}
 
 			elseif ($kriteria=="jenis kelamin") {
-				$murid = $this->Getmurid_model->getMuridByJK($_POST['username']);
+				$murid = $this->Getmurid_model->getMuridByJK($_POST['id_user']);
 			}
 
 			elseif ($kriteria=="pelajaran") {
-				$pelajaran = $this->Getmurid_model->getPelajaran($_POST['username']);
+				$pelajaran = $this->Getmurid_model->getPelajaran($_POST['id_user']);
 				$arraypelajaran = array();
 				foreach ($pelajaran as $row) {
 					array_push($arraypelajaran, $row->pelajaran_keahlian);
@@ -45,7 +45,7 @@
 			}
 
 			elseif ($kriteria=="kelas") {
-				$kelas = $this->Getmurid_model->getKelas($_POST['username']);
+				$kelas = $this->Getmurid_model->getKelas($_POST['id_user']);
 				$arraykelas = array();
 				foreach ($kelas as $row) {
 					array_push($arraykelas, $row->kelas_keahlian);
@@ -57,7 +57,7 @@
 			}
 
 			elseif ($kriteria=="usia") {
-				$murid = $this->Getmurid_model->getMuridByUsia($_POST['username']);
+				$murid = $this->Getmurid_model->getMuridByUsia($_POST['id_user']);
 			}
 
 			elseif ($kriteria=="all") {
@@ -67,8 +67,8 @@
 			$result = array();
 			foreach ($murid as $row ) {
 				array_push($result,array(
-		        'id'=>$row->id_pencarian,
-		        'username'=>$row->username_pencarian,
+		        'id'=>$row->id_pencariantutor,
+		        'id_user'=>$row->id_user,
 		        'name'=>$row->nameuser_pencarian,
 		        'kelas'=>$row->kelas_pencarian,
 		        'pelajaran'=>$row->pelajaran_pencarian,

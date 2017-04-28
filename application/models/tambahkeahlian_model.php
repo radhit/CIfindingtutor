@@ -5,9 +5,9 @@
 		{
 			parent::__construct();
 		}
-		public function tambahKeahlian($username, $kelas, $pelajaran)
+		public function tambahKeahlian($id_user, $kelas, $pelajaran)
 		{
-			$query = "INSERT INTO `keahlian_tutor`(`id_keahlian`, `username_keahlian`, `kelas_keahlian`, `pelajaran_keahlian`) VALUES (NULL, '$username', '$kelas', '$pelajaran');";
+			$query = "INSERT INTO `keahlian_tutor`(`id_keahlian`, `id_user`, `kelas_keahlian`, `pelajaran_keahlian`) VALUES (NULL, '$id_user', '$kelas', '$pelajaran');";
 
 				if($this->db->query($query))
 				{

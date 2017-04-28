@@ -5,9 +5,9 @@
 		{
 			parent::__construct();
 		}
-		public function getKeahlian($username)
+		public function getKeahlian($id_user)
 		{
-			$query = "SELECT * FROM `keahlian_tutor` WHERE `username_keahlian` = '$username'";
+			$query = "SELECT * FROM `keahlian_tutor` WHERE `id_user` = '$id_user'";
 			$hasil = $this->db->query($query);
 			return $hasil->result();
 		}

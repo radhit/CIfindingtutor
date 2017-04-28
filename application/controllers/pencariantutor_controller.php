@@ -10,11 +10,11 @@
 		{
 			$this->load->database();
 
-			if(isset($_POST['username']) and isset($_POST['name']) and isset($_POST['kelas']) and isset($_POST['pelajaran']) and isset($_POST['alamat']) 
+			if(isset($_POST['id_user']) and isset($_POST['name']) and isset($_POST['kelas']) and isset($_POST['pelajaran']) and isset($_POST['alamat']) 
 				and isset($_POST['tanggal']) and isset($_POST['hari']) and isset($_POST['jam']) and isset($_POST['durasi']) and isset($_POST['jeniskelamin']))
 			{
 				$this->Pencariantutor_model->pencarianTutor(
-					$_POST['username'],
+					$_POST['id_user'],
 					$_POST['name'],
 					$_POST['kelas'],
 					$_POST['pelajaran'],
@@ -28,7 +28,7 @@
 					$_POST['biaya']);
 
 				$this->Pencariantutor_model->historyPencarian(
-					$_POST['username'],
+					$_POST['id_user'],
 					$_POST['hari'],
 					$_POST['jam'],
 					$_POST['jeniskelamin'],

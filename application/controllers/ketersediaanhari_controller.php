@@ -9,20 +9,22 @@
 		public function index()
 		{
 			$this->load->database();
-			$cek = $this->Ketersediaanhari_model->cekHari($_POST['username']);
+			$cek = $this->Ketersediaanhari_model->cekHari($_POST['id_user']);
 			if ($cek>0) 
 			{
-				$this->Ketersediaanhari_model->deleteHari($_POST['username']);
+				$this->Ketersediaanhari_model->deleteHari($_POST['id_user']);
 			}
 			$hari=explode(",", $_POST['hari']);
 			// var_dump($hari);
 			// exit();
-			if(isset($_POST['username']) and isset($_POST['hari']))
+			if(isset($_POST['id_user']) and isset($_POST['hari']))
 			{
-				for ($i=0; $i <sizeof($hari)-1 ; $i++) { 	
+				for ($i=0; $i <sizeof($hari)-1 ; $i++) 
+				{ 	
 					$this->Ketersediaanhari_model->tambahHari(
-						$_POST['username'],$hari[$i]);
-				}
+						$_POST['id_user'],$hari[$i]);
+					
+				}	
 					$respon['error'] = false;
 					$respon['message'] = "Ketersediaan hari ditambah";
 			}

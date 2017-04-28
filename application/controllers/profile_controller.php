@@ -10,14 +10,14 @@
 		{
 			$this->load->database();
 
-			$username = $_POST['username'];
+			$id_user = $_POST['id_user'];
 			$jenis = $_POST['jenis'];
 			if ($jenis=='Pentutor') {
-				$profile = $this->Profile_model->getProfile($username);
+				$profile = $this->Profile_model->getProfile($id_user);
 				$result = $profile;
 			}
 			elseif ($jenis=='Murid') {
-				$profile = $this->Profile_model->getProfileMurid($username);
+				$profile = $this->Profile_model->getProfileMurid($id_user);
 				$result = array();
 				foreach ($profile as $row ) {
 					array_push($result,array(

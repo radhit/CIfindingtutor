@@ -5,15 +5,15 @@
 		{
 			parent::__construct();
 		}
-		public function getKriteria($username)
+		public function getKriteria($id_user)
 		{
-			$query = "SELECT * FROM `history_kriteria` WHERE `username_history` = '$username'";
+			$query = "SELECT * FROM `history_kriteria` WHERE `id_user` = '$id_user'";
 			$hasil = $this->db->query($query);
 			return $hasil->num_rows();
 		}
-		public function deleteKriteria($username)
+		public function deleteKriteria($id_user)
 		{
-			$query = "DELETE FROM `history_kriteria` WHERE `username_history` = '$username'";
+			$query = "DELETE FROM `history_kriteria` WHERE `id_user` = '$id_user'";
 
 				if($this->db->query($query))
 				{

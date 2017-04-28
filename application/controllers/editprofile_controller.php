@@ -10,18 +10,18 @@
 		{
 			$this->load->database();
 			$hari=explode(",", $_POST['ketersediaanhari']);
-			if(isset($_POST['username']) and isset($_POST['nama']) and isset($_POST['alamat']) and isset($_POST['telp']) and
+			if(isset($_POST['id_user']) and isset($_POST['nama']) and isset($_POST['alamat']) and isset($_POST['telp']) and
 				isset($_POST['email']) and isset($_POST['ketersediaanhari']))
 			{
-				$this->Editprofile_model->deleteHari($_POST['username']);
+				$this->Editprofile_model->deleteHari($_POST['id_user']);
 
-				for ($i=0; $i <sizeof($hari) ; $i++) { 	
-					$this->editprofile_model->tambahHari(
-						$_POST['username'],$hari[$i]);
+				for ($i=0; $i <sizeof($hari)-1 ; $i++) { 	
+					$this->Editprofile_model->tambahHari(
+						$_POST['id_user'],$hari[$i]);
 				}	
 
 				$this->Editprofile_model->updateProfile(
-					$_POST['username'],
+					$_POST['id_user'],
 					$_POST['nama'],
 					$_POST['alamat'],
 					$_POST['telp'],

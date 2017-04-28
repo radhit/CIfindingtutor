@@ -9,9 +9,9 @@
 		public function index()
 		{
 			$this->load->database();
-			$jumlahKriteria = $this->Deletekriteria_model->getKriteria($_POST['username']);
+			$jumlahKriteria = $this->Deletekriteria_model->getKriteria($_POST['id_user']);
 			if ($jumlahKriteria>0) {
-				$this->Deletekriteria_model->deleteKriteria($_POST['username']);
+				$this->Deletekriteria_model->deleteKriteria($_POST['id_user']);
 				$respon['error'] = false;
 				$respon['message'] = "Kriteria anda akan diperbaharui setelah memesan kembali";
 			}

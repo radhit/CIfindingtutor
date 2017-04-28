@@ -5,9 +5,9 @@
 		{
 			parent::__construct();
 		}
-		public function updateProfile($username, $nama, $alamat, $telp, $email)
+		public function updateProfile($id_user, $nama, $alamat, $telp, $email)
 		{
-			$query = "UPDATE `user` SET `nama_user`='$nama',`alamat_user`='$alamat',`telp_user`='$telp',`email_user`='$email'WHERE `username_user` = '$username'";
+			$query = "UPDATE `user` SET `nama_user`='$nama',`alamat_user`='$alamat',`telp_user`='$telp',`email_user`='$email'WHERE `id_user` = '$id_user'";
 
 				if($this->db->query($query))
 				{
@@ -18,9 +18,9 @@
 					return false;
 				}		
 		}
-		public function tambahHari($username, $hari)
+		public function tambahHari($id_user, $hari)
 		{
-			$query = "INSERT INTO `ketersediaan_hari`(`hari_tutor`, `username_tutor`) VALUES ('$hari','$username')";
+			$query = "INSERT INTO `ketersediaan_hari`(`hari_tutor`, `id_user`) VALUES ('$hari','$id_user')";
 
 				if($this->db->query($query))
 				{
@@ -31,9 +31,9 @@
 					return false;
 				}		
 		}
-		public function deleteHari($username)
+		public function deleteHari($id_user)
 		{
-			$query = "DELETE FROM `ketersediaan_hari` WHERE username_tutor='$username'";
+			$query = "DELETE FROM `ketersediaan_hari` WHERE id_user='$id_user'";
 			if($this->db->query($query))
 				{
 					return true;

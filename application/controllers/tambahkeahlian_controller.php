@@ -9,10 +9,10 @@
 		public function index()
 		{
 			$this->load->database();
-			if(isset($_POST['username']) and isset($_POST['kelas']) and isset($_POST['pelajaran']))
+			if(isset($_POST['id_user']) and isset($_POST['kelas']) and isset($_POST['pelajaran']))
 			{
 				$this->Tambahkeahlian_model->tambahKeahlian(
-					$_POST['username'],
+					$_POST['id_user'],
 					$_POST['kelas'],
 					$_POST['pelajaran']);
 					$respon['error'] = false;

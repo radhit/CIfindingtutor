@@ -5,36 +5,37 @@
 		{
 			parent::__construct();
 		}
-		public function tambahHari($username, $hari)
+		public function cekHari($id_user)
 		{
-			$query = "INSERT INTO `ketersediaan_hari`(`hari_tutor`, `username_tutor`) VALUES ('$hari','$username')";
-
-			if($this->db->query($query))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}		
-		}
-		public function cekHari($username)
-		{
-			$query= "SELECT * FROM `ketersediaan_hari` WHERE `username_tutor`='$username'";
+			$query= "SELECT * FROM `ketersediaan_hari` WHERE `id_user`='$id_user'";
 			$hasil = $this->db->query($query);
 			return $hasil->num_rows();
 		}
-		public function deleteHari($username)
+		public function tambahHari($id_user, $hari)
 		{
-			$query = "DELETE FROM `ketersediaan_hari` WHERE `username_tutor` = '$username'";
-			if($this->db->query($query))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}	
+			$query = "INSERT INTO `ketersediaan_hari`(`hari_tutor`, `id_user`) VALUES ('$hari','$id_user')";
+
+				if($this->db->query($query))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}		
 		}
+		public function deleteHari($id_user)
+		{
+			$query = "DELETE FROM `ketersediaan_hari` WHERE id_user='$id_user'";
+			if($this->db->query($query))
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}	
+		}
+
 	}
 ?>
