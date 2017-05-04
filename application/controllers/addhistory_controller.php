@@ -19,7 +19,7 @@
 		        		$id = $row->id_pencariantutor;
 		        		$username= $row->username_tutor;
 
-						$this->addhistory_model->tambahHistory($id, $username);
+						$this->Addhistory_model->tambahHistory($id, $username);
 						$respon['error'] = false;
 					}
 				}

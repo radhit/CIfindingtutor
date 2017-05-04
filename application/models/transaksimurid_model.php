@@ -17,7 +17,7 @@
 			}
 
 			$datatutor = "SELECT * FROM `user` WHERE `username_user`= '$tutor'";
-			$query = "SELECT * FROM `pencarian_tutor` WHERE `id_pencarian` = '$idpencariantutor'";
+			$query = "SELECT * FROM `pencarian_tutor` WHERE `id_pencariantutor` = '$idpencariantutor'";
 			$hasil = array();
 			$hasil['data_transaksi'] = $qrcode;
 			$hasil['transaksi'] = $this->db->query($query)->result();

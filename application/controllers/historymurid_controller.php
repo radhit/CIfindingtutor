@@ -9,7 +9,7 @@
 		public function index()
 		{
 			$this->load->database();
-			$username = $_POST['username'];
+			$id_user = $_POST['id_user'];
 			$history = $this->Historymurid_model->getHistory($username);
 			// $result = $history;
 			$result = array();
@@ -18,7 +18,7 @@
 				$tanggal=$row->tanggal_pencarian.$penghubung.$row->jam_pencarian;
 				array_push($result,array(
 		        'id_history'=>$row->id_historytransaksi,
-		        'id_pencariantutor'=>$row->id_pencarian,
+		        'id_pencariantutor'=>$row->id_pencariantutor,
 		        'nama_tutor'=>$row->nama_user,
 		        'telp_tutor'=>$row->telp_user,
 		        'pelajaran'=>$row->pelajaran_pencarian,

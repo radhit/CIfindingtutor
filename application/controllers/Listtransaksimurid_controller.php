@@ -9,10 +9,10 @@
 		public function index()
 		{
 			$this->load->database();
-			$username = $_POST['username'];
-			$cektransaksi = $this->Listtransaksimurid_model->cekData($username);
+			$id_user = $_POST['id_user'];
+			$cektransaksi = $this->Listtransaksimurid_model->cekData($id_user);
 			if ($cektransaksi>0) {
-				$list = $this->Listtransaksimurid_model->getTransaksi($username);
+				$list = $this->Listtransaksimurid_model->getTransaksi($id_user);
 				$result = array();
 				$tampung = array();
 				foreach ($list as $row ) {
@@ -20,8 +20,7 @@
 			        'id_transaksi'=>$row->id_transaksi,
 			        'id_pencariantutor'=>$row->id_pencariantutor,
 			        'pelajaran'=>$row->pelajaran_pencarian,
-			        'nama_tutor'=>$row->nama_user,
-			        'username_murid'=>$row->username_pencarian
+			        'nama_tutor'=>$row->nama_user
 			    	));
 				}
 				$result['list'] = $tampung;

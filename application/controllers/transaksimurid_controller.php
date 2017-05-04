@@ -4,7 +4,7 @@
 		function __construct()
 		{
 			parent::__construct();
-			$this->load->model('transaksimurid_model');
+			$this->load->model('Transaksimurid_model');
 		}
 		public function index()
 		{
